@@ -10,11 +10,12 @@
 
 #include <JuceHeader.h>
 #include "PluginProcessor.h"
+#include "MainWindow.h"
 
 //==============================================================================
 /**
 */
-class DynDisAudioProcessorEditor  : public juce::AudioProcessorEditor
+class DynDisAudioProcessorEditor  : public juce::AudioProcessorEditor 
 {
 public:
     DynDisAudioProcessorEditor (DynDisAudioProcessor&);
@@ -28,6 +29,7 @@ private:
     // This reference is provided as a quick way for your editor to
     // access the processor object that created it.
     DynDisAudioProcessor& audioProcessor;
+    MainWindow mainWindow; 
 
     JUCE_DECLARE_NON_COPYABLE_WITH_LEAK_DETECTOR (DynDisAudioProcessorEditor)
 };
