@@ -1,0 +1,38 @@
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2019
+
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DynDis - Standalone Plugin", "DynDis_StandalonePlugin.vcxproj", "{9289E37B-EFC0-56B2-D1F5-2CE95729610F}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B57F271A-C7B0-FEDD-F3C3-96F55CC82E92} = {B57F271A-C7B0-FEDD-F3C3-96F55CC82E92}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DynDis - VST3", "DynDis_VST3.vcxproj", "{21250E5E-B676-241E-85C4-F96D39A8C077}"
+	ProjectSection(ProjectDependencies) = postProject
+		{B57F271A-C7B0-FEDD-F3C3-96F55CC82E92} = {B57F271A-C7B0-FEDD-F3C3-96F55CC82E92}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DynDis - Shared Code", "DynDis_SharedCode.vcxproj", "{B57F271A-C7B0-FEDD-F3C3-96F55CC82E92}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{21250E5E-B676-241E-85C4-F96D39A8C077}.Debug|x64.ActiveCfg = Debug|x64
+		{21250E5E-B676-241E-85C4-F96D39A8C077}.Debug|x64.Build.0 = Debug|x64
+		{21250E5E-B676-241E-85C4-F96D39A8C077}.Release|x64.ActiveCfg = Release|x64
+		{21250E5E-B676-241E-85C4-F96D39A8C077}.Release|x64.Build.0 = Release|x64
+		{9289E37B-EFC0-56B2-D1F5-2CE95729610F}.Debug|x64.ActiveCfg = Debug|x64
+		{9289E37B-EFC0-56B2-D1F5-2CE95729610F}.Debug|x64.Build.0 = Debug|x64
+		{9289E37B-EFC0-56B2-D1F5-2CE95729610F}.Release|x64.ActiveCfg = Release|x64
+		{9289E37B-EFC0-56B2-D1F5-2CE95729610F}.Release|x64.Build.0 = Release|x64
+		{B57F271A-C7B0-FEDD-F3C3-96F55CC82E92}.Debug|x64.ActiveCfg = Debug|x64
+		{B57F271A-C7B0-FEDD-F3C3-96F55CC82E92}.Debug|x64.Build.0 = Debug|x64
+		{B57F271A-C7B0-FEDD-F3C3-96F55CC82E92}.Release|x64.ActiveCfg = Release|x64
+		{B57F271A-C7B0-FEDD-F3C3-96F55CC82E92}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
