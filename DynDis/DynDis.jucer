@@ -56,7 +56,8 @@
     <MODULE id="juce_gui_extra" showAllCode="1" useLocalCopy="0" useGlobalPath="1"/>
   </MODULES>
   <LIVE_SETTINGS>
-    <WINDOWS buildEnabled="1" systemHeaderPath="C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0&#10;C:\Program Files (x86)\Microsoft Visual Studio\2019\Enterprise\VC\Tools\MSVC\14.23.28105\include"
-             extraCompilerFlags="-std=c++17" windowsTargetPlatformVersion="10.0.18362.0"/>
+    <WINDOWS buildEnabled="1" systemHeaderPath="C:\Program Files (x86)\Windows Kits\10\Include\10.0.18362.0&#10;C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.27.29110\include"
+             extraCompilerFlags="-std=c++17" windowsTargetPlatformVersion="10.0.18362.0"
+             warningsEnabled="0"/>
   </LIVE_SETTINGS>
 </JUCERPROJECT>
