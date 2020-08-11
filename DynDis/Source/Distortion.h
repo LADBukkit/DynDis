@@ -19,6 +19,18 @@ public:
 	DisValue& getDisValue(int);
 
 private:
-	DisValue positive[5];
-	DisValue negative[5];
+	DisValue positive[5] {
+		{0, 0, 0, false},
+		{0, 0, 0, false},
+		{0, 0, 0, false},
+		{0, 0, 0, false},
+		{0, 0, 0, false}
+	};
+	DisValue negative[5] {
+		{0, 0, 0, false},
+		{0, 0, 0, false},
+		{0, 0, 0, false},
+		{0, 0, 0, false},
+		{0, 0, 0, false}
+	};
 };

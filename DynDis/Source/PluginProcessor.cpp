@@ -149,10 +149,20 @@ void DynDisAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce:
     // Alternatively, you can process the samples with the channels
     // interleaved by keeping the same state.
 
-	distortion.getDisValue(0).input = 0.5;
-	distortion.getDisValue(0).output = 1;
-	distortion.getDisValue(0).smooth = 1;
+	// ITS FOR DA TEST
+	distortion.getDisValue(0).input = 0.2;
+	distortion.getDisValue(0).output = -1;
+	distortion.getDisValue(0).smooth = -1;
 	distortion.getDisValue(0).isSmooth = true;
+
+	distortion.getDisValue(1).input = 1;
+	distortion.getDisValue(1).output = -1;
+	distortion.getDisValue(1).smooth = -1;
+	distortion.getDisValue(1).isSmooth = false;
+
+	/*for (float f = 0; f < 1; f += 0.01) {
+		DBG(std::to_string(f) + " " + std::to_string(distortion.calc(f)));
+	}*/
 
 
     for (int channel = 0; channel < totalNumInputChannels; ++channel)
@@ -161,7 +171,13 @@ void DynDisAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce:
         // ..do something to the data...
 
 		for (int i = 0; i < buffer.getNumSamples(); i++) {
-			channelData[i] = distortion.calc(i);
+			float f = channelData[i];
+			if (f < 0) {
+				channelData[i] = -distortion.calc(-f);
+			}
+			else {
+				channelData[i] = distortion.calc(f);
+			}
 		}
     }
 }

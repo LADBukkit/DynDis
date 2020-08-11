@@ -10,9 +10,9 @@
 
 #pragma once
 
-struct DisValue {
+typedef struct {
 	float input;
 	float output;
 	float smooth;
 	bool isSmooth;
-};
+} DisValue;

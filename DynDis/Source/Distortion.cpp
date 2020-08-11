@@ -10,8 +10,10 @@
 
 #include "Distortion.h"
 
-static const DisValue FIRST = {0, 0, 0, false};
-static const DisValue LAST  = {1.01, 1.01, 0, false};
+#include <JuceHeader.h>
+
+static const DisValue FIRST {0,    0,    0, false};
+static const DisValue LAST  {1, 1, 0, false};
 
 float Distortion::calc(float x)
 {
@@ -30,6 +32,7 @@ float Distortion::calc(float x)
 		list[3] = negative[3];
 		list[4] = negative[4];
 	}
+	// TODO Could have problems with last
 	list[5] = LAST;
 
 	std::qsort(list, 6, sizeof(DisValue), [](const void* a, const void* b) {
@@ -57,7 +60,9 @@ float Distortion::calc(float x)
 					2 * t * (1 - t) * value.smooth +
 					t * t * value.output;
 			}
+			return y;
 		}
+		old = value;
 	}
 
 	return x;
