@@ -148,11 +148,21 @@ void DynDisAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce:
     // the samples and the outer loop is handling the channels.
     // Alternatively, you can process the samples with the channels
     // interleaved by keeping the same state.
+
+	distortion.getDisValue(0).input = 0.5;
+	distortion.getDisValue(0).output = 1;
+	distortion.getDisValue(0).smooth = 1;
+	distortion.getDisValue(0).isSmooth = true;
+
+
     for (int channel = 0; channel < totalNumInputChannels; ++channel)
     {
         auto* channelData = buffer.getWritePointer (channel);
-
         // ..do something to the data...
+
+		for (int i = 0; i < buffer.getNumSamples(); i++) {
+			channelData[i] = distortion.calc(i);
+		}
     }
 }
 

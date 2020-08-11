@@ -4,6 +4,11 @@
               addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1">
   <MAINGROUP id="nVt1lb" name="DynDis">
     <GROUP id="{5389E706-614D-0CB7-667F-614A5BEE3384}" name="Source">
+      <GROUP id="{3B463C18-7C04-120A-FF63-D36D5666060B}" name="distortion">
+        <FILE id="TKkTgr" name="Distortion.cpp" compile="1" resource="0" file="Source/Distortion.cpp"/>
+        <FILE id="W6pQwJ" name="Distortion.h" compile="0" resource="0" file="Source/Distortion.h"/>
+        <FILE id="ON3R5r" name="DisValue.h" compile="0" resource="0" file="Source/DisValue.h"/>
+      </GROUP>
       <FILE id="hZ5RFY" name="MainWindow.cpp" compile="1" resource="0" file="Source/MainWindow.cpp"/>
       <FILE id="ZESv2I" name="MainWindow.h" compile="0" resource="0" file="Source/MainWindow.h"/>
       <FILE id="AkpbIa" name="TabComp.cpp" compile="1" resource="0" file="Source/TabComp.cpp"/>

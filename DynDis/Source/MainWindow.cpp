@@ -24,6 +24,13 @@
 #include "TabComp.h"
 #include "TabComp.h"
 #include "TabComp.h"
+#include "TabComp.h"
+#include "TabComp.h"
+#include "TabComp.h"
+#include "TabComp.h"
+#include "TabComp.h"
+#include "TabComp.h"
+#include "TabComp.h"
 
 
 //[MiscUserDefs] You can add your own user definitions and misc code here...
@@ -44,10 +51,17 @@ MainWindow::MainWindow ()
 
     juce__tabbedComponent.reset (new juce::TabbedComponent (juce::TabbedButtonBar::TabsAtTop));
     addAndMakeVisible (juce__tabbedComponent.get());
-    juce__tabbedComponent->setTabBarDepth (30);
-    juce__tabbedComponent->addTab (TRANS("Set1"), juce::Colours::lightgrey, new TabComp(), true);
-    juce__tabbedComponent->addTab (TRANS("Set2"), juce::Colours::lightgrey, new TabComp(), true);
-    juce__tabbedComponent->addTab (TRANS("Set3"), juce::Colours::lightgrey, new TabComp(), true);
+    juce__tabbedComponent->setTabBarDepth (24);
+    juce__tabbedComponent->addTab (TRANS("P1"), juce::Colours::lightgrey, new TabComp(), true);
+    juce__tabbedComponent->addTab (TRANS("P2"), juce::Colours::lightgrey, new TabComp(), true);
+    juce__tabbedComponent->addTab (TRANS("P3"), juce::Colours::lightgrey, new TabComp(), true);
+    juce__tabbedComponent->addTab (TRANS("P4"), juce::Colours::lightgrey, new TabComp(), true);
+    juce__tabbedComponent->addTab (TRANS("P5"), juce::Colours::lightgrey, new TabComp(), true);
+    juce__tabbedComponent->addTab (TRANS("P-1"), juce::Colours::lightgrey, new TabComp(), true);
+    juce__tabbedComponent->addTab (TRANS("P-2"), juce::Colours::lightgrey, new TabComp(), true);
+    juce__tabbedComponent->addTab (TRANS("P-3"), juce::Colours::lightgrey, new TabComp(), true);
+    juce__tabbedComponent->addTab (TRANS("P-4"), juce::Colours::lightgrey, new TabComp(), true);
+    juce__tabbedComponent->addTab (TRANS("P-5"), juce::Colours::lightgrey, new TabComp(), true);
     juce__tabbedComponent->setCurrentTabIndex (0);
 
     juce__tabbedComponent->setBounds (368, 24, 368, 264);
@@ -144,7 +158,7 @@ BEGIN_JUCER_METADATA
 <JUCER_COMPONENT documentType="Component" className="MainWindow" componentName=""
                  parentClasses="public juce::Component" constructorParams="" variableInitialisers=""
                  snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
-                 fixedSize="1" initialWidth="750" initialHeight="500">
+                 fixedSize="1" initialWidth="750" initialHeight="300">
   <BACKGROUND backgroundColour="ff2b2a2d">
     <PATH pos="0 0 100 100" fill="solid: ff25bdce" hasStroke="0" nonZeroWinding="1">s 190.26 40 l 340 288 l 44 288 x</PATH>
   </BACKGROUND>
@@ -153,12 +167,26 @@ BEGIN_JUCER_METADATA
                 connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
   <TABBEDCOMPONENT name="tabField" id="d8d34839f71c59d" memberName="juce__tabbedComponent"
                    virtualName="" explicitFocusOrder="0" pos="368 24 368 264" orientation="top"
-                   tabBarDepth="30" initialTab="0">
-    <TAB name="Set1" colour="ffd3d3d3" useJucerComp="1" contentClassName="TabComp"
+                   tabBarDepth="24" initialTab="0">
+    <TAB name="P1" colour="ffd3d3d3" useJucerComp="1" contentClassName="TabComp"
          constructorParams="" jucerComponentFile="TabComp.cpp"/>
-    <TAB name="Set2" colour="ffd3d3d3" useJucerComp="1" contentClassName="TabComp"
+    <TAB name="P2" colour="ffd3d3d3" useJucerComp="1" contentClassName="TabComp"
          constructorParams="" jucerComponentFile="TabComp.cpp"/>
-    <TAB name="Set3" colour="ffd3d3d3" useJucerComp="1" contentClassName="TabComp"
+    <TAB name="P3" colour="ffd3d3d3" useJucerComp="1" contentClassName="TabComp"
+         constructorParams="" jucerComponentFile="TabComp.cpp"/>
+    <TAB name="P4" colour="ffd3d3d3" useJucerComp="1" contentClassName=""
+         constructorParams="" jucerComponentFile="TabComp.cpp"/>
+    <TAB name="P5" colour="ffd3d3d3" useJucerComp="1" contentClassName=""
+         constructorParams="" jucerComponentFile="TabComp.cpp"/>
+    <TAB name="P-1" colour="ffd3d3d3" useJucerComp="1" contentClassName=""
+         constructorParams="" jucerComponentFile="TabComp.cpp"/>
+    <TAB name="P-2" colour="ffd3d3d3" useJucerComp="1" contentClassName=""
+         constructorParams="" jucerComponentFile="TabComp.cpp"/>
+    <TAB name="P-3" colour="ffd3d3d3" useJucerComp="1" contentClassName=""
+         constructorParams="" jucerComponentFile="TabComp.cpp"/>
+    <TAB name="P-4" colour="ffd3d3d3" useJucerComp="1" contentClassName=""
+         constructorParams="" jucerComponentFile="TabComp.cpp"/>
+    <TAB name="P-5" colour="ffd3d3d3" useJucerComp="1" contentClassName=""
          constructorParams="" jucerComponentFile="TabComp.cpp"/>
   </TABBEDCOMPONENT>
 </JUCER_COMPONENT>

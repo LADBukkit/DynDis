@@ -34,43 +34,43 @@ TabComp::TabComp ()
 
     juce__slider.reset (new juce::Slider ("slider1"));
     addAndMakeVisible (juce__slider.get());
-    juce__slider->setRange (0, 10, 0);
+    juce__slider->setRange (-1, 1, 0.01);
     juce__slider->setSliderStyle (juce::Slider::Rotary);
     juce__slider->setTextBoxStyle (juce::Slider::TextBoxBelow, false, 80, 20);
     juce__slider->addListener (this);
 
-    juce__slider->setBounds (160, 0, 136, 112);
+    juce__slider->setBounds (176, 8, 160, 128);
 
     juce__slider2.reset (new juce::Slider ("slider2"));
     addAndMakeVisible (juce__slider2.get());
-    juce__slider2->setRange (0, 10, 0);
+    juce__slider2->setRange (0, 1, 0.01);
     juce__slider2->setSliderStyle (juce::Slider::Rotary);
     juce__slider2->setTextBoxStyle (juce::Slider::TextBoxBelow, false, 80, 20);
     juce__slider2->addListener (this);
 
-    juce__slider2->setBounds (0, 0, 136, 112);
+    juce__slider2->setBounds (16, 8, 160, 128);
 
     juce__slider3.reset (new juce::Slider ("slider3"));
     addAndMakeVisible (juce__slider3.get());
-    juce__slider3->setRange (0, 10, 0);
+    juce__slider3->setRange (-1, 1, 0.01);
     juce__slider3->setSliderStyle (juce::Slider::LinearHorizontal);
     juce__slider3->setTextBoxStyle (juce::Slider::TextBoxBelow, false, 80, 20);
     juce__slider3->addListener (this);
 
-    juce__slider3->setBounds (152, 128, 152, 64);
+    juce__slider3->setBounds (184, 136, 176, 80);
 
     juce__toggleButton.reset (new juce::ToggleButton ("sliderCheckbox"));
     addAndMakeVisible (juce__toggleButton.get());
     juce__toggleButton->setButtonText (TRANS("Smooth"));
     juce__toggleButton->addListener (this);
 
-    juce__toggleButton->setBounds (24, 136, 96, 32);
+    juce__toggleButton->setBounds (40, 152, 128, 48);
 
 
     //[UserPreSize]
     //[/UserPreSize]
 
-    setSize (600, 400);
+    setSize (368, 264);
 
 
     //[Constructor] You can add your own custom stuff here..
@@ -171,25 +171,25 @@ BEGIN_JUCER_METADATA
 <JUCER_COMPONENT documentType="Component" className="TabComp" componentName=""
                  parentClasses="public juce::Component" constructorParams="" variableInitialisers=""
                  snapPixels="8" snapActive="1" snapShown="1" overlayOpacity="0.330"
-                 fixedSize="0" initialWidth="600" initialHeight="400">
+                 fixedSize="1" initialWidth="368" initialHeight="264">
   <BACKGROUND backgroundColour="ff323e44"/>
   <SLIDER name="slider1" id="a7929668f04636fd" memberName="juce__slider"
-          virtualName="" explicitFocusOrder="0" pos="160 0 136 112" min="0.0"
-          max="10.0" int="0.0" style="RotaryVerticalDrag" textBoxPos="TextBoxBelow"
+          virtualName="" explicitFocusOrder="0" pos="176 8 160 128" min="-1.0"
+          max="1.0" int="0.01" style="Rotary" textBoxPos="TextBoxBelow"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="slider2" id="6ee417c4350493be" memberName="juce__slider2"
-          virtualName="" explicitFocusOrder="0" pos="0 0 136 112" min="0.0"
-          max="10.0" int="0.0" style="Rotary" textBoxPos="TextBoxBelow"
+          virtualName="" explicitFocusOrder="0" pos="16 8 160 128" min="0.0"
+          max="1.0" int="0.01" style="Rotary" textBoxPos="TextBoxBelow"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <SLIDER name="slider3" id="7e57ecf399678ad9" memberName="juce__slider3"
-          virtualName="" explicitFocusOrder="0" pos="152 128 152 64" min="0.0"
-          max="10.0" int="0.0" style="LinearHorizontal" textBoxPos="TextBoxBelow"
+          virtualName="" explicitFocusOrder="0" pos="184 136 176 80" min="-1.0"
+          max="1.0" int="0.01" style="LinearHorizontal" textBoxPos="TextBoxBelow"
           textBoxEditable="1" textBoxWidth="80" textBoxHeight="20" skewFactor="1.0"
           needsCallback="1"/>
   <TOGGLEBUTTON name="sliderCheckbox" id="c4dce1ee67cd1546" memberName="juce__toggleButton"
-                virtualName="" explicitFocusOrder="0" pos="24 136 150 32" buttonText="Smooth"
+                virtualName="" explicitFocusOrder="0" pos="40 152 128 48" buttonText="Smooth"
                 connectedEdges="0" needsCallback="1" radioGroupId="0" state="0"/>
 </JUCER_COMPONENT>
 
