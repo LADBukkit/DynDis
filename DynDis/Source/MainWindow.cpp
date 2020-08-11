@@ -103,16 +103,24 @@ void MainWindow::paint (juce::Graphics& g)
 
     g.fillAll (juce::Colour (0xff2b2a2d));
 
-    {
-        float x = 0, y = 0;
-        juce::Colour fillColour = juce::Colour (0xff25bdce);
-        //[UserPaintCustomArguments] Customize the painting arguments here..
-        //[/UserPaintCustomArguments]
-        g.setColour (fillColour);
-        g.fillPath (internalPath1, juce::AffineTransform::translation(x, y));
-    }
+    //{
+    //    float x = 0, y = 0;
+    //    juce::Colour fillColour = juce::Colour (0xff25bdce);
+    //    //[UserPaintCustomArguments] Customize the painting arguments here..
+    //    //[/UserPaintCustomArguments]
+    //    g.setColour (fillColour);
+    //    g.fillPath (internalPath1, juce::AffineTransform::translation(x, y));
+    //}
 
     //[UserPaint] Add your own custom painting code here..
+
+    g.setColour(juce::Colour(0xFF000000));
+
+    // Coordinates: x: 24 y: 48 width: 328 height: 240
+    g.drawRect(64, 48, 240, 240);
+
+
+
     //[/UserPaint]
 }
 
