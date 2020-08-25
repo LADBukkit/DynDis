@@ -150,7 +150,7 @@ void DynDisAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce:
     // interleaved by keeping the same state.
 
 	// ITS FOR DA TEST
-	distortion.getDisValue(0).input = 0.2;
+	/*distortion.getDisValue(0).input = 0.2;
 	distortion.getDisValue(0).output = -1;
 	distortion.getDisValue(0).smooth = -1;
 	distortion.getDisValue(0).isSmooth = true;
@@ -158,7 +158,7 @@ void DynDisAudioProcessor::processBlock (juce::AudioBuffer<float>& buffer, juce:
 	distortion.getDisValue(1).input = 1;
 	distortion.getDisValue(1).output = -1;
 	distortion.getDisValue(1).smooth = -1;
-	distortion.getDisValue(1).isSmooth = false;
+	distortion.getDisValue(1).isSmooth = false;*/
 
 	/*for (float f = 0; f < 1; f += 0.01) {
 		DBG(std::to_string(f) + " " + std::to_string(distortion.calc(f)));

@@ -21,6 +21,7 @@
 
 //[Headers]     -- You can add your own extra header files here --
 #include <JuceHeader.h>
+#include "PluginProcessor.h"
 //[/Headers]
 
 
@@ -38,7 +39,7 @@ class MainWindow  : public juce::Component,
 {
 public:
     //==============================================================================
-    MainWindow ();
+    MainWindow (DynDisAudioProcessor&);
     ~MainWindow() override;
 
     //==============================================================================
@@ -53,6 +54,7 @@ public:
 
 private:
     //[UserVariables]   -- You can add your own custom variables in this section.
+    DynDisAudioProcessor& p;
     //[/UserVariables]
 
     //==============================================================================

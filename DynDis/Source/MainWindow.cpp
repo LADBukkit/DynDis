@@ -22,24 +22,17 @@
 
 #include "MainWindow.h"
 #include "TabComp.h"
-#include "TabComp.h"
-#include "TabComp.h"
-#include "TabComp.h"
-#include "TabComp.h"
-#include "TabComp.h"
-#include "TabComp.h"
-#include "TabComp.h"
-#include "TabComp.h"
-#include "TabComp.h"
+
 
 
 //[MiscUserDefs] You can add your own user definitions and misc code here...
 //[/MiscUserDefs]
 
 //==============================================================================
-MainWindow::MainWindow ()
+MainWindow::MainWindow (DynDisAudioProcessor& p) : p(p)
 {
     //[Constructor_pre] You can add your own custom stuff here..
+    
     //[/Constructor_pre]
 
     juce__toggleButton.reset (new juce::ToggleButton ("symmetricCheckbox"));
@@ -119,16 +112,53 @@ void MainWindow::paint (juce::Graphics& g)
     // Set the color for the background
     g.setColour(juce::Colour(0xFF000000));
 
-    // Place the rectangle on the following Coordinates:
-    // x: 22 y: 48 width: 240 height: 240
-    g.drawRect(22, 48, 240, 240);
-
     // This will draw the cross inside the rectangle to align the distortion graph
     // Horizontal line 
     g.drawLine(22, 168, 262, 168);
     // Vertical line
     g.drawLine(142, 48, 142, 288);
 
+    // Honestly i dont understand this function but my mate is telling me that it works teehee
+    
+    internalPath1.clear();
+    internalPath1.startNewSubPath(-119, p.distortion.calc(-1) * (-120));
+    
+
+    for (int i = -118; i < 120; i++)
+    {
+        int d = p.distortion.calc((float)i / 120.0f) * (-120);
+        internalPath1.lineTo(i, d);    
+    }
+
+    g.setColour(juce::Colour(0xffffffff));
+    g.strokePath(internalPath1, juce::PathStrokeType(1.0f), juce::AffineTransform::translation(142.0f, 168.0f));
+
+    // Set the color for the background
+    g.setColour(juce::Colour(0xFF000000));
+
+    // Place the rectangle on the following Coordinates:
+    // x: 22 y: 48 width: 240 height: 240
+    g.drawRect(22, 48, 240, 240);
+    
+    // Die Berechnung von Robin
+    //for (DisValue value : list)
+    //{
+    //    if (value.input >= x) {
+    //        float dx = x - old.input; // dx = distortion x 
+    //        float t = dx / (value.input - old.input); // t = dx relativ zum Bereich value.input - old.input 
+    //        float y = x;
+    //        if (!value.isSmooth) {
+    //            y = (1 - t) * old.output + t * value.output;
+    //        }
+    //        else {
+    //            y = (1 - t) * (1 - t) * old.output +
+    //                2 * t * (1 - t) * value.smooth +
+    //                t * t * value.output;
+    //        }
+    //        return y;
+    //    }
+    //    old = value;
+    //}
 
 
     //[/UserPaint]

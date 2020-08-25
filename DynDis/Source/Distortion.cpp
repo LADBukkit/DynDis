@@ -13,10 +13,12 @@
 #include <JuceHeader.h>
 
 static const DisValue FIRST {0,    0,    0, false};
-static const DisValue LAST  {1, 1, 0, false};
+static const DisValue LAST  {1,	   1,	 0, false};
 
 float Distortion::calc(float x)
 {
+	if (x == 0)	return 0;
+	int sign = 1;
 	DisValue list[6];
 	if (x >= 0) {
 		list[0] = positive[0];
@@ -31,6 +33,8 @@ float Distortion::calc(float x)
 		list[2] = negative[2];
 		list[3] = negative[3];
 		list[4] = negative[4];
+		x *= -1;
+		sign = -1; 
 	}
 	// TODO Could have problems with last
 	list[5] = LAST;
@@ -45,27 +49,26 @@ float Distortion::calc(float x)
 	
 	DisValue old = FIRST;
 
-	for (DisValue value : list)
+	for(DisValue value : list)
 	{
 		if (value.input >= x) {
-			float dx = x - old.input;
-			float t = dx / (value.input - old.input);
+			float dx = x - old.input; // dx = distortion x 
+			float t = dx / (value.input - old.input); // t = dx relativ zum Bereich value.input - old.input 
 			float y = x;
 			if (!value.isSmooth) {
-				y = (1 - t) * old.output +
-					t * value.output;
+				y = (1 - t) * old.output + t * value.output;
 			}
 			else {
 				y = (1 - t) * (1 - t) * old.output +
 					2 * t * (1 - t) * value.smooth +
 					t * t * value.output;
 			}
-			return y;
+			return sign * y;
 		}
 		old = value;
 	}
 
-	return x;
+	return sign * x;
 }
 
 DisValue& Distortion::getDisValue(int i)
