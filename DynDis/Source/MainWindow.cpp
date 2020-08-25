@@ -112,12 +112,22 @@ void MainWindow::paint (juce::Graphics& g)
     //    g.fillPath (internalPath1, juce::AffineTransform::translation(x, y));
     //}
 
-    //[UserPaint] Add your own custom painting code here..
 
+    //[UserPaint] Add your own custom painting code here..
+    // Draw the rectangle that is showing the graph
+
+    // Set the color for the background
     g.setColour(juce::Colour(0xFF000000));
 
-    // Coordinates: x: 24 y: 48 width: 328 height: 240
-    g.drawRect(64, 48, 240, 240);
+    // Place the rectangle on the following Coordinates:
+    // x: 22 y: 48 width: 240 height: 240
+    g.drawRect(22, 48, 240, 240);
+
+    // This will draw the cross inside the rectangle to align the distortion graph
+    // Horizontal line 
+    g.drawLine(22, 168, 262, 168);
+    // Vertical line
+    g.drawLine(142, 48, 142, 288);
 
 
 
